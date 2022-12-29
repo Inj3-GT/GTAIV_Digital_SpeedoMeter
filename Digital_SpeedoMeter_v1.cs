@@ -74,5 +74,6 @@ namespace Digital_Speedometer_ByInj3
         {
             return IprSpeedoMeterDraw && Player.CanControlCharacter && Player.Character.isInVehicle() && Player.Character.isSittingInVehicle();
         }
+        
     }
 }
