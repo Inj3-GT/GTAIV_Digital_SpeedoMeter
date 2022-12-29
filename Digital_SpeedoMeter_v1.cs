@@ -37,7 +37,7 @@ namespace Digital_Speedometer_ByInj3
         private void IprDrawSpeed(object sender, GraphicsEventArgs e)
         {
         
-            if (!IprSpeedoMeterDraw || !Player.Character.isInVehicle() || !Player.Character.isSittingInVehicle())
+            if (!IprCheckBool())
             {
                 return;
             }
@@ -68,6 +68,11 @@ namespace Digital_Speedometer_ByInj3
                 e.Graphics.DrawText(string.Format("{0} " + (string)IprSpeedUnit, (int)IprSpeed), (float)IprW, (float)IprH, IprColorWhite, IprFont);   
                 
             }
+        }
+        
+        private bool IprCheckBool()
+        {
+            return IprSpeedoMeterDraw && Player.CanControlCharacter && Player.Character.isInVehicle() && Player.Character.isSittingInVehicle();
         }
     }
 }
